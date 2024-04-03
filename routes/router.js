@@ -1,4 +1,4 @@
-const { googleAuthController, googleAuthCallback } = require("../controller/google");
+const { googleAuthController, googleAuthCallback, scheduleEvent } = require("../controller/google");
 
 
 const router = require("express").Router();
@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
 router.get('/google', googleAuthController);
 
 router.get('/google/redirect', googleAuthCallback);
+router.get('/schedule',scheduleEvent);
 
 // Export the router
 module.exports = router;
